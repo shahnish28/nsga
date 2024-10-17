@@ -1,0 +1,43 @@
+.footer {
+    background-color: #023554;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .social-media {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 15px; /* Added margin before the first icon */
+  }
+  
+  .social-media a {
+    color: white;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-media a:hover {
+    transform: rotate(360deg); /* Rotate on hover */
+  }
+  
+  .footer-text {
+    text-align: center;
+    font-size: 1rem;
+    flex-grow: 1; /* Ensures that the text is centered */
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .footer-logo {
+    width: 100px;
+    height: auto;
+  }
+  

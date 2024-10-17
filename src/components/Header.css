@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #fdfdfd;
+}
+
+/* Header Container */
+.header {
+    display: flex;
+    justify-content: space-between; /* Added this back for balanced spacing */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    max-width: 100%; /* Allow the logo to scale down */
+    height: auto; /* Maintain aspect ratio */
+    width: 60px; /* Set a fixed width */
+}
+.logo1 {
+    height: 57px; /* Maintain aspect ratio */
+    width: 106px; /* Set a fixed width */
+}
+
+/* Logo text styling */
+.logo-container span {
+    font-family: 'Pacifico', cursive !important; 
+    font-size: 2rem;
+    font-weight: 700;
+    color: #023554; 
+    letter-spacing: 1px;
+}
+
+/* Navigation Menu */
+nav ul {
+    margin-left: auto; /* Automatically align nav items to the right */
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #023554; /* Link color */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: white; /* Change hover color for better visibility */
+}
+
+/* CTA Button */
+.cta-button {
+    margin-left: 40px;
+    background-color: #023554; /* Button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+}
+
+.cta-button:hover {
+    background-color: white; /* Change button color on hover */
+    color: #023554; /* Change text color to match the background */
+    transform: scale(1.05); /* Slightly scale the button on hover */
+    border: 2px solid #023554;
+}
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 15px 30px; /* Reduce padding */
+    }
+
+    .logo-container span {
+        font-size: 1.5rem; /* Adjust logo text size */
+    }
+
+    nav ul li a {
+        font-size: 0.95rem; /* Adjust font size for nav links */
+    }
+
+    .cta-button {
+        padding: 8px 18px; /* Adjust button padding */
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive Design for Mobile */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center; /* Center all content */
+        padding: 10px 20px;
+    }
+
+    .logo-container {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; /* Remove extra margin */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Keep nav text readable */
+    }
+
+    .cta-button {
+        margin-left: 0; /* Center the button */
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
