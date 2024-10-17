@@ -7,21 +7,37 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; 
+    font-family: 'Poppins', sans-serif;
     background-color: #fdfdfd;
 }
 
 /* Header Container */
 .header {
     display: flex;
-    justify-content: space-between; /* Added this back for balanced spacing */
+    justify-content: space-between; 
     align-items: center;
     padding: 20px 40px;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.8); /* Default background */
+    background-image: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensure the image covers the whole header */
+    background-position: center; /* Center the background image */
+    backdrop-filter: blur(10px); /* Blur effect */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Optional Gradient Header Background */
+.header-gradient {
+    background: linear-gradient(90deg, rgba(2, 53, 84, 0.9) 0%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* Add subtle box shadow when scrolling */
+.header.scrolled {
+    background-color: rgba(2, 53, 84, 0.9); /* Darker background when scrolling */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo container styling */
@@ -32,27 +48,27 @@ body {
 
 /* Logo styling */
 .logo {
-    max-width: 100%; /* Allow the logo to scale down */
-    height: auto; /* Maintain aspect ratio */
-    width: 60px; /* Set a fixed width */
+    max-width: 100%; 
+    height: auto;
+    width: 60px; 
 }
 .logo1 {
-    height: 57px; /* Maintain aspect ratio */
-    width: 106px; /* Set a fixed width */
+    height: 57px; 
+    width: 106px; 
 }
 
 /* Logo text styling */
 .logo-container span {
-    font-family: 'Pacifico', cursive !important; 
+    font-family: 'Pacifico', cursive !important;
     font-size: 2rem;
     font-weight: 700;
-    color: #023554; 
+    color: #023554;
     letter-spacing: 1px;
 }
 
 /* Navigation Menu */
 nav ul {
-    margin-left: auto; /* Automatically align nav items to the right */
+    margin-left: auto;
     display: flex;
     list-style: none;
 }
@@ -63,20 +79,21 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #023554; /* Link color */
+    color: #023554;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
 }
 
 nav ul li a:hover {
-    color: white; /* Change hover color for better visibility */
+    color: black; 
+    transform: scale(1.1); /* Slight hover effect */
 }
 
 /* CTA Button */
 .cta-button {
     margin-left: 40px;
-    background-color: #023554; /* Button color */
+    background-color: #023554;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -84,32 +101,48 @@ nav ul li a:hover {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: white; /* Change button color on hover */
-    color: #023554; /* Change text color to match the background */
-    transform: scale(1.05); /* Slightly scale the button on hover */
-    border: 2px solid #023554;
+    background-color: black;
+    color: whitesmoke;
+    transform: scale(1.05); 
+    border: 2px solid rgba(0, 0, 0, 0);
+}
+
+/* Scroll-based animation */
+.header-logo-animation {
+    animation: logoFadeIn 1s ease-in-out;
+}
+
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design for Tablets and Smaller Screens */
 @media screen and (max-width: 1024px) {
     .header {
-        padding: 15px 30px; /* Reduce padding */
+        padding: 15px 30px; 
     }
 
     .logo-container span {
-        font-size: 1.5rem; /* Adjust logo text size */
+        font-size: 1.5rem;
     }
 
     nav ul li a {
-        font-size: 0.95rem; /* Adjust font size for nav links */
+        font-size: 0.95rem;
     }
 
     .cta-button {
-        padding: 8px 18px; /* Adjust button padding */
+        padding: 8px 18px;
         font-size: 0.95rem;
     }
 }
@@ -118,7 +151,7 @@ nav ul li a:hover {
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
-        align-items: center; /* Center all content */
+        align-items: center; 
         padding: 10px 20px;
     }
 
@@ -129,7 +162,7 @@ nav ul li a:hover {
     nav ul {
         flex-direction: column;
         align-items: center;
-        margin-left: 0; /* Remove extra margin */
+        margin-left: 0;
     }
 
     nav ul li {
@@ -137,11 +170,11 @@ nav ul li a:hover {
     }
 
     nav ul li a {
-        font-size: 1rem; /* Keep nav text readable */
+        font-size: 1rem; 
     }
 
     .cta-button {
-        margin-left: 0; /* Center the button */
+        margin-left: 0;
         padding: 8px 16px;
         font-size: 0.9rem;
     }

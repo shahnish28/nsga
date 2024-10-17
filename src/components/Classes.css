@@ -41,6 +41,8 @@
 
 /* Individual Class Item Styling */
 .class-item {
+  background: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg') no-repeat center center; /* Add the background image path */
+    background-size: cover;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -117,5 +119,6 @@
   .class-item {
     width: 90%;
     margin-bottom: 40px;
+    
   }
 }

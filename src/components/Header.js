@@ -26,7 +26,7 @@ function Header() {
           </li>
         </ul>
       </nav>
-      <a href="#join" className="cta-button">
+      <a href="#classes" className="cta-button">
         Join a Class
       </a>
     </header>

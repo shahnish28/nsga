@@ -1,107 +1,97 @@
-/* General Hero Section Styling */
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
 .hero {
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #023554; /* Deep blue background */
-    background-image: url('C:/Users/Archi/Desktop/nsga1/nsga/public/the_crew.png'); /* Corrected path */
-    background-size: contain; /* Cover the entire hero section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repetition */
-    background-attachment: fixed; /* Fix the background image during scroll */
-    color: #ffffff; /* White text */
-    position: relative;
-    padding: 0 20px;
-    overflow: hidden; /* Prevent scrolling overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background: url('C:/Users/Archi/Desktop/nsga1/nsga/public/hero_bg.JPG') no-repeat center center;
+  background-size: cover; /* Ensure it covers the whole section */
 }
 
-/* Add a semi-transparent overlay for better visibility */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Slightly lighter dark overlay for readability */
-    z-index: 1; /* Place it behind the text */
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
 }
 
-/* Text Styling within Hero Section */
-.hero-text {
-    max-width: 90vw; /* Full width with padding */
-    margin: 0 auto;
-    z-index: 2; /* Ensure the text is above the overlay */
-    text-align: center;
-    position: relative;
+.hero-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-.hero-text h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9); /* Lightened white for softer effect */
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+.hero-title span {
+  color: #f7d633; /* Highlight color for "Garba" */
 }
 
-.hero-text p {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9); /* Lightened white for paragraph */
-    margin-bottom: 40px;
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Button Styling */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    z-index: 2; /* Ensure the buttons are above the overlay */
-    position: relative;
+.hero-buttons .cta-button {
+  margin: 0 10px;
+  background-color: #f7d633;
+  color: #023554;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.hero-buttons .button {
-    padding: 15px 30px;
-    border-radius: 25px;
-    background-color: #ffffff;
-    color: #023554;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    text-decoration: none;
+.hero-buttons .cta-button:hover {
+  transform: scale(1.1);
+  background-color: #fff;
+  color: #023554;
 }
 
-.hero-buttons .button:hover {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+.hero-buttons .cta-button:active {
+  transform: scale(0.98);
 }
 
-/* Fix text overflow and ensure responsiveness */
-.hero-text, .hero-buttons {
-    width: 100%;
+.hero-background {
+  background-attachment: fixed; /* Keeps background fixed when scrolling */
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
 
-    .hero-text p {
-        font-size: 1rem;
-    }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
+  .hero-buttons .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
 
-    .hero-buttons .button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
 }
