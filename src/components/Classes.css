@@ -18,41 +18,40 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
-  display: inline-block;
-  color: #023554;
+  z-index: 3;
 }
 
 /* Paragraph under heading */
 .classes p {
   font-size: 1.1rem;
-  color: #666;
+  color: black;
   margin-bottom: 50px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 3;
 }
 
 /* Class List Styling */
 .class-list {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-around; /* Space items evenly */
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 /* Individual Class Item Styling */
 .class-item {
-  background: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg') no-repeat center center; /* Add the background image path */
-    background-size: cover;
-  background-color: #ffffff;
+  background: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg') no-repeat center center; /* Keep the background image */
+  background-size: cover;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  width: 300px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 20px;
+  width: 300px; /* Fixed width for the cards */
   text-align: center;
-  cursor: pointer;
-  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative; /* Required for absolute positioning of images */
+  margin-top: 50px; /* Add space above the cards */
 }
 
 .class-item:hover {
@@ -62,9 +61,8 @@
 
 .class-item h3 {
   font-size: 1.8rem;
-  margin-bottom: 15px;
+  margin: 10px 0; /* Adjust margin for heading */
   color: #023554;
-  font-weight: 600;
 }
 
 .class-item p {
@@ -73,52 +71,96 @@
   line-height: 1.6;
 }
 
-/* Class icons */
-.class-item::before {
-  content: '';
-  display: block;
-  background-color: #023554;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  position: absolute;
-  top: -30px;
-  left: calc(50% - 30px); /* Center the icon */
-  background-image: url('https://cdn-icons-png.flaticon.com/512/888/888936.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Beginner Icon */
-.class-item:nth-child(1)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/889/889431.png');
-}
-
-/* Intermediate Icon */
-.class-item:nth-child(2)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/898/898142.png');
-}
-
-/* Advanced Icon */
-.class-item:nth-child(3)::before {
-  background-image: url('https://cdn-icons-png.flaticon.com/512/1698/1698578.png');
-}
-
-/* Add subtle hover animation */
-.class-item:hover h3 {
-  color: #f5821f; /* Optional: Highlight title on hover */
+/* Align images above the card */
+.card-image {
+  width: 55%; /* Set to full width of the card */
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Ensure image scales properly */
+  position: absolute; /* Position images absolutely */
+  top: -100px; /* Adjust the position above the card for better spacing */
+  left: 50%; /* Center align */
+  transform: translateX(-50%); /* Center the image horizontally */
+  z-index: 0; /* Lower z-index for the card image */
 }
 
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 900px) {
   .class-list {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center align items */
+  }
+  
+  .class-item {
+    width: 90%; /* Full width on mobile */
+    margin-bottom: 40px; /* Space between items */
   }
 
-  .class-item {
-    width: 90%;
-    margin-bottom: 40px;
-    
+  .card-image {
+    height: 150px; /* Adjust height for mobile */
   }
 }
+
+@media screen and (max-width: 600px) {
+  .classes h2 {
+    font-size: 2rem; 
+  }
+
+  .classes p {
+    font-size: 1rem; 
+  }
+
+  .class-item h3 {
+    font-size: 1.5rem; 
+  }
+
+  .class-item p {
+    font-size: 0.9rem; 
+  }
+
+  .card-image {
+    height: 120px; 
+  }
+}
+
+/* Manual Additional Media Query for Laptops */
+@media screen and (min-width: 1024px) and (max-width: 2928px) {
+  .class-item {
+    background: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg') no-repeat center center; /* Keep the background image */
+  background-size: cover;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Fixed width for the cards */
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative; /* Required for absolute positioning of images */
+  margin-top: 50px; /* Add space above the cards */
+    
+
+  }
+
+  .classes h2 {
+    font-size: 2.2rem;
+  }
+
+  .classes p {
+    font-size: 1.3rem;
+    /* color: aqua; */
+  }
+
+  .card-image {
+    
+      width: 55%; /* Set to full width of the card */
+      height: 200px; /* Adjust height as needed */
+      object-fit: cover; /* Ensure image scales properly */
+      position: absolute; /* Position images absolutely */
+      top: -200px; /* Adjust the position above the card for better spacing */
+      left: 50%; /* Center align */
+      transform: translateX(-50%); /* Center the image horizontally */
+      z-index: 0; /* Lower z-index for the card image */
+    }
+  }
+    
+    
+    
+    

@@ -8,17 +8,17 @@ function Footer() {
     <footer className="footer">
       <div className="social-media">
         <a
-          href="https://instagram.com/yourprofile"
+          href="https://instagram.com/navrangshaileegarbaacademy"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaInstagram />
         </a>
-        <a href="tel:+1234567890">
+        <a href="tel:8980413169">
           <FaPhone />
         </a>
         <a
-          href="https://wa.me/1234567890"
+          href="https://wa.me/8980413169"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -27,7 +27,7 @@ function Footer() {
       </div>
 
       <p className="footer-text">
-        © 2024 Garba Dance Crew. All Rights Reserved.
+        © 2024 Navrang Shailee Garba Academy. All Rights Reserved.
       </p>
 
       <div className="logo-container">

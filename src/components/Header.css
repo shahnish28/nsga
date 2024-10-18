@@ -7,7 +7,6 @@
 }
 
 body {
-    /* margin: 0;padding: 0; */
     font-family: 'Poppins', sans-serif;
     background-color: #fdfdfd;
 }
@@ -18,11 +17,11 @@ body {
     justify-content: space-between; 
     align-items: center;
     padding: 20px 40px;
-    background: rgba(255, 255, 255, 0.8); /* Default background */
-    background-image: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg'); /* Add your image path here */
-    background-size: cover; /* Ensure the image covers the whole header */
-    background-position: center; /* Center the background image */
-    backdrop-filter: blur(10px); /* Blur effect */
+    background: rgba(255, 255, 255, 0.8); 
+    background-image: url('C:/Users/Archi/Desktop/nsga1/nsga/public/header_bg.jpg'); /* Add your image path */
+    background-size: cover; 
+    background-position: center; 
+    backdrop-filter: blur(10px); 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -37,7 +36,7 @@ body {
 
 /* Add subtle box shadow when scrolling */
 .header.scrolled {
-    background-color: rgba(2, 53, 84, 0.9); /* Darker background when scrolling */
+    background-color: rgba(2, 53, 84, 0.9); 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -53,18 +52,10 @@ body {
     height: auto;
     width: 60px; 
 }
+
 .logo1 {
     height: 57px; 
     width: 106px; 
-}
-
-/* Logo text styling */
-.logo-container span {
-    font-family: 'Pacifico', cursive !important;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #023554;
-    letter-spacing: 1px;
 }
 
 /* Navigation Menu */
@@ -83,12 +74,12 @@ nav ul li a {
     color: #023554;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease; /* Added transform transition */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
     color: black; 
-    transform: scale(1.1); /* Slight hover effect */
+    transform: scale(1.1);
 }
 
 /* CTA Button */
@@ -128,6 +119,21 @@ nav ul li a:hover {
     }
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #023554;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
 /* Responsive Design for Tablets and Smaller Screens */
 @media screen and (max-width: 1024px) {
     .header {
@@ -151,32 +157,52 @@ nav ul li a:hover {
 /* Responsive Design for Mobile */
 @media screen and (max-width: 768px) {
     .header {
-        flex-direction: column;
-        align-items: center; 
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 10px 20px;
+        height: auto;
     }
 
-    .logo-container {
-        margin-bottom: 15px;
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        margin-right: auto; /* Push hamburger to the left */
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        align-items: center;
-        margin-left: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-active {
+        display: flex;
     }
 
     nav ul li {
         margin: 10px 0;
-    }
-
-    nav ul li a {
-        font-size: 1rem; 
+        text-align: center;
+        width: 100%;
     }
 
     .cta-button {
         margin-left: 0;
-        padding: 8px 16px;
-        font-size: 0.9rem;
+        padding: 10px;
+        font-size: 1rem;
+        width: 90%; /* Button takes full width */
+        margin: 10px auto;
+        display: block;
+    }
+
+    /* Display logos even on mobile */
+    .logo, .logo1 {
+        display: inline-block;
+        margin-right: 10px;
     }
 }

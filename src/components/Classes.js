@@ -9,15 +9,20 @@ function Classes() {
         Whether you are a beginner or a pro, we have classes for all levels!
       </p>
       <div className="class-list">
+        {" "}
+        {/* Wrap all cards in class-list */}
         <div className="class-item">
+          <img src="khushbu.jpeg" alt="khushbu" className="card-image" />
           <h3>Beginner</h3>
           <p>Get started with the basics of Garba.</p>
         </div>
         <div className="class-item">
+          <img src="deti.jpeg" alt="deti" className="card-image" />
           <h3>Intermediate</h3>
           <p>Build on your skills and learn new moves.</p>
         </div>
         <div className="class-item">
+          <img src="meetu.jpeg" alt="meet" className="card-image" />
           <h3>Advanced</h3>
           <p>Master complex routines and become a pro!</p>
         </div>
